@@ -22,7 +22,7 @@ Also the angle() calculations used mean values but the angle calculations were n
 
 As the name implies the dataset includes values for the std and mean of feature sorted first by subject and then activity.  
 
-The field names of the dataset were changed to eliminate abbreviations except the std was kept for standard deviation as this is a well accepted abbreviation.  The all special characters were removed from the names,  all names we changed to lower case.  Below is a table of the field names from the original definition and the new names that 
+The field names of the dataset were changed to eliminate abbreviations except the std was kept for standard deviation as this is a well accepted abbreviation.  The all special characters were removed from the names,  all names we changed to lower case.  Below is a table of the field names from the original definition and the new names that are used in  summarised_features_mean.txt and feature_std_mean_sort_subject_activity.txt.
 
 |features_info.txt	| feature_std_mean_sort_subject_activity.txt |
 | ----------------- | ------------------------------------------ |
@@ -105,30 +105,32 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
 mean(): Mean value
 std(): Standard deviation
 
-other values from x feature values are not included in the feature_std_mean_sort_activity_subject.txt
+* Other values from X_train.txt and X_test.txt feature values are not included in the feature_std_mean_sort_activity_subject.txt or the summarised_features_mean.txt files
+
+
 
 Data Order
 ==========
@@ -138,14 +140,17 @@ Activity Type
 =============
 The type of user activity that occured while the measurement was being taken.
 The valid activity names are:
-1 WALKING
-2 WALKING_UPSTAIRS
-3 WALKING_DOWNSTAIRS
-4 SITTING
-5 STANDING
-6 LAYING
+* 1 WALKING
+* 2 WALKING_UPSTAIRS
+* 3 WALKING_DOWNSTAIRS
+* 4 SITTING
+* 5 STANDING
+* 6 LAYING
 Note: the original activity ids precede the activity name above.
 
 Column Variable Names
 =====================
 When you look at the variable names you will notice that many times the name varies only in the last letters of x,y,z.  These 3 values correspond to x, y, z directions read from the accelerometer or gyroscope.  These values should be thought of as a group.
+
+- The frequency prefix (f in original data) refers to measure in the frequency domain.
+- The time prefix (t in orginal data) refers to times a measure was taken.  These measures were captured at a constant rate of 50 Hz (50 measures per second)
